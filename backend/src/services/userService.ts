@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from "bcrypt";
 import { User } from '../entities/user.entity';
 import { AppDataSource } from '../data-source';
 
