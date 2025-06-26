@@ -4,7 +4,7 @@ import { AppDataSource } from '../data-source';
 
 const userRepository = AppDataSource.getRepository(User);
 
-const signUpService = async (name:string, email:string, password:string)=> {
+const signUpService = async (name:string, email:string, password:string) => {
     const passwordHash = await bcrypt.hash(password, 10);
 
     const user = new User();
