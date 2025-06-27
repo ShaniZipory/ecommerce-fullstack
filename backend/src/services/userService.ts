@@ -41,4 +41,4 @@ const signInService = async (email: string, password: string) => {
     return token;
 }
 
-export { signUpService };
+export { signUpService, signInService };

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction} from "express";
-import { signUpService } from "../services/userService";
+import { signUpService, signInService } from "../services/userService";
 
 const signUpController = async (req:Request, res:Response, next: NextFunction) => {
     try {
@@ -9,6 +9,16 @@ const signUpController = async (req:Request, res:Response, next: NextFunction) =
       } catch (error: any) {
         next(error);
       }
+}
+
+const signInController = async (req:Request, res:Response, next: NextFunction) => {
+  try {
+      const { email, password } = req.body;
+      const token = await signInService(email, password);
+      res.status(200).json({ token });
+    } catch (error: any) {
+      next(error);
+    }
 }
 
 export {signUpController};
