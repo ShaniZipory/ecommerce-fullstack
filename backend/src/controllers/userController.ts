@@ -21,4 +21,4 @@ const signInController = async (req:Request, res:Response, next: NextFunction) =
     }
 }
 
-export {signUpController};
+export {signUpController, signInController};
